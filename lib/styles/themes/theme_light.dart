@@ -6,6 +6,7 @@ import '../colors/custom_colors.dart';
 import '../typography/typography_custom.dart';
 import '../typography/typography_theme_ext.dart';
 
+
 class ThemeLight {
   static ThemeData get lightTheme => _lightTheme;
 

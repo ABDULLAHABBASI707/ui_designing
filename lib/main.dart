@@ -4,12 +4,13 @@ import 'package:ui_designing/styles/themes/theme_light.dart';
 import 'package:ui_designing/weather_homepage.dart';
 import 'home_page.dart';
 
-
 void main() {
   runApp(const MyApp());
 }
 
-final ValueNotifier<ThemeMode> themeModeNotifier = ValueNotifier(ThemeMode.system,);
+final ValueNotifier<ThemeMode> themeModeNotifier = ValueNotifier(
+  ThemeMode.system,
+);
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -20,12 +21,13 @@ class MyApp extends StatelessWidget {
       valueListenable: themeModeNotifier,
       builder: (context, currentThemeMode, _) {
         return MaterialApp(
-          title: 'Your App ',
+          title: 'Your App',
+
           debugShowCheckedModeBanner: false,
           theme: ThemeLight.lightTheme,
           darkTheme: ThemeDark.darkTheme,
           themeMode: currentThemeMode,
-          home:  SignUpPage(),
+          home: SignUpPage(),
         );
       },
     );
@@ -72,4 +74,3 @@ class MyApp extends StatelessWidget {
 //     );
 //   }
 // }
-
