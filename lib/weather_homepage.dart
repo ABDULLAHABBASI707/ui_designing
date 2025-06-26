@@ -93,7 +93,9 @@ class WeatherHomePage extends StatelessWidget {
                                   color: CustomColors.white,
                                 ),
                                 hintText: 'Search here...',
-                                hintStyle: Theme.of(context).textTheme.titleMedium,
+                                hintStyle: Theme.of(
+                                  context,
+                                ).textTheme.titleMedium,
                                 border: InputBorder.none,
                                 contentPadding: const EdgeInsets.symmetric(
                                   horizontal: Sizes.s20,
@@ -105,7 +107,7 @@ class WeatherHomePage extends StatelessWidget {
                         ],
                       ),
                     ),
-                    const SizedBox(height:Sizes.s195),
+                    const SizedBox(height: Sizes.s195),
                   ],
                 ),
 
@@ -139,7 +141,7 @@ class WeatherHomePage extends StatelessWidget {
                             ),
                           ],
                         ),
-                        SizedBox(height:Sizes.s12),
+                        SizedBox(height: Sizes.s12),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
@@ -148,7 +150,9 @@ class WeatherHomePage extends StatelessWidget {
                               children: [
                                 Text(
                                   '+17',
-                                  style: Theme.of(context).textTheme.displaySmall,
+                                  style: Theme.of(
+                                    context,
+                                  ).textTheme.displaySmall,
                                 ),
                                 SizedBox(width: Sizes.s4),
                                 Text(
@@ -205,22 +209,21 @@ class WeatherHomePage extends StatelessWidget {
                       ],
                     ).padAll(Sizes.s16),
                   ),
-
                 ),
               ],
             ),
             const SizedBox(height: Sizes.s15),
-              Row(
-                children: [
-                  Text(
-                    'Invest by Category',
-                    style: TextStyle(
-                      fontSize: FontSize.f18,
-                      fontWeight: FontWeight.bold,
-                    ),
+            Row(
+              children: [
+                Text(
+                  'Invest by Category',
+                  style: TextStyle(
+                    fontSize: FontSize.f18,
+                    fontWeight: FontWeight.bold,
                   ),
-                ],
-              ).padSymmetric(hor: Sizes.s18,ver: Sizes.s8),
+                ),
+              ],
+            ).padSymmetric(hor: Sizes.s18, ver: Sizes.s8),
 
             const SizedBox(height: Sizes.s8),
 
@@ -228,7 +231,7 @@ class WeatherHomePage extends StatelessWidget {
               height: 75,
               child: ListView(
                 scrollDirection: Axis.horizontal,
-               // padding: const EdgeInsets.symmetric(horizontal: Sizes.s16),
+                // padding: const EdgeInsets.symmetric(horizontal: Sizes.s16),
                 children: [
                   _categoryCard(Icons.timer, 'Duration'),
                   _categoryCard(Icons.backup_rounded, 'Return'),
@@ -236,23 +239,24 @@ class WeatherHomePage extends StatelessWidget {
                   _categoryCard(Icons.safety_check, 'Safety'),
                 ],
               ),
-            )
-        .padSymmetric(hor:Sizes.s16,ver: Sizes.s10),
+            ).padSymmetric(hor: Sizes.s16, ver: Sizes.s10),
 
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
                   'Best Offers',
-                  style:
-                  TextStyle(
+                  style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: FontSize.f18,
                   ),
                 ),
                 TextButton(
                   onPressed: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=>WeatherScreen()));
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => WeatherScreen()),
+                    );
                   },
                   child: Text(
                     'View all',

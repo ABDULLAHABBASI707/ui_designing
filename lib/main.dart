@@ -22,7 +22,6 @@ class MyApp extends StatelessWidget {
       builder: (context, currentThemeMode, _) {
         return MaterialApp(
           title: 'Your App',
-
           debugShowCheckedModeBanner: false,
           theme: ThemeLight.lightTheme,
           darkTheme: ThemeDark.darkTheme,

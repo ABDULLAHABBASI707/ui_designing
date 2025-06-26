@@ -117,6 +117,7 @@ import 'package:ui_designing/styles/extensions/extensions.dart';
 import 'package:ui_designing/styles/layouts/fonts.dart';
 import 'package:ui_designing/styles/layouts/sizes.dart';
 import 'package:ui_designing/styles/typography/typography.dart';
+import 'package:ui_designing/weather_homepage.dart';
 import 'package:ui_designing/widget/theme_dialog.dart';
 
 class SignUpPage extends StatefulWidget {
@@ -189,21 +190,18 @@ class _SignUpPageState extends State<SignUpPage> {
               const SizedBox(height: Sizes.s20),
               ElevatedButton(
                 onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>WeatherHomePage()));
                 },
                 style: ElevatedButton.styleFrom(
                   minimumSize: const Size.fromHeight(50),
                   backgroundColor: CustomColors.amber600,
                   textStyle: const TextStyle(fontSize: FontSize.f18),
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: Sizes.s8,
-                    vertical: Sizes.s3,
-                  ),
                 ),
                 child: const Text(
                   'Sign Up',
                   style: TextStyle(color: CustomColors.white),
                 ),
-              ),
+              ).padSymmetric(hor: Sizes.s8,ver: Sizes.s3),
             ],
           ).padAll(Sizes.s16),
         ),

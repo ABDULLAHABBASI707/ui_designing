@@ -29,16 +29,31 @@ class ThemeDark {
     extensions: <ThemeExtension<dynamic>>[
       AppColors(
         appbarColor: CustomColors.amber600,
+        popumenbtn: CustomColors.white,
+        weather_container: CustomColors.teal300,
+        note_container: CustomColors.teal200,
         scafoldColor: CustomColors.black50,
         primaryColor: CustomColors.green500,
         secondaryColor: CustomColors.black50,
       ),
 
       CustomTextStyle(
+
         headlineLargeGreen:TextStyle(
           color: CustomColors.green500,
           fontWeight: FontWeight.bold,
           fontSize: FontSize.f18,
+        ),
+
+        weatherInfo: TextStyle(
+          color: CustomColors.green500,
+          fontSize: FontSize.f15,
+          fontWeight: FontWeight.bold,
+        ),
+        weatherInfo1: TextStyle(
+          color: CustomColors.green500,
+          fontSize: FontSize.f12,
+          fontWeight: FontWeight.w500,
         ),
         headinglarge: TextStyle(
           fontSize: FontSize.f32,
@@ -55,11 +70,8 @@ class ThemeDark {
           fontWeight: FontWeight.w700,
           color: CustomColors.black400,
         ),
-
       ),
     ],
-
-
 
 
   );

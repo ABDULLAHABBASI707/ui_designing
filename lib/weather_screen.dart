@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:ui_designing/styles/colors/colors_theme_ext.dart';
 import 'package:ui_designing/styles/colors/custom_colors.dart';
 import 'package:ui_designing/styles/extensions/extensions.dart';
 import 'package:ui_designing/styles/layouts/fonts.dart';
 import 'package:ui_designing/styles/layouts/sizes.dart';
+import 'package:ui_designing/styles/typography/typography.dart';
 import 'package:ui_designing/widget/custom_appbar.dart';
 
 class WeatherScreen extends StatefulWidget {
@@ -16,7 +18,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: CustomColors.green50,
+      backgroundColor: Theme.of(context).colorScheme.background,
       appBar: CustomAppBar(title: 'Todays Weather'),
       body: Padding(
         padding: const EdgeInsets.all(Sizes.s16),
@@ -26,7 +28,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
               height: 180,
               width: double.infinity,
               decoration: BoxDecoration(
-                color: CustomColors.green500,
+                color: Theme.of(context).extension<AppColors>()?.weather_container,
                 borderRadius: BorderRadius.circular(Sizes.s22),
               ),
               child: Column(
@@ -123,7 +125,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
               height: 365,
               width: double.infinity,
               decoration: BoxDecoration(
-                color: CustomColors.white,
+                color: Theme.of(context).extension<AppColors>()?.note_container,
                 borderRadius: BorderRadius.circular(Sizes.s12),
               ),
               child: Column(
@@ -199,7 +201,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
     );
   }
 
-  static Widget _weatherNote() {
+   Widget _weatherNote() {
     return Row(
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
@@ -214,19 +216,12 @@ class _WeatherScreenState extends State<WeatherScreen> {
               children: [
                 Text(
                   "May 24 .5:43 pm",
-                  style: TextStyle(
-                    color: CustomColors.black,
-                    fontSize: FontSize.f15,
-                    fontWeight: FontWeight.w900,
-                  ),
+                  style:
+                  Theme.of(context).extension<CustomTextStyle>()?.weatherInfo,
                 ).padOnly(left: Sizes.s12),
                 Text(
                   "Excellent harvest,the grapes have\na rich flavor and aroma",
-                  style: TextStyle(
-                    color: CustomColors.black,
-                    fontSize: FontSize.f12,
-                    fontWeight: FontWeight.w500,
-                  ),
+                  style: Theme.of(context).extension<CustomTextStyle>()?.weatherInfo1,
                 ).padOnly(left: Sizes.s12),
               ],
             ),

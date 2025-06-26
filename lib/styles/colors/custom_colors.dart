@@ -47,4 +47,20 @@ class CustomColors {
   static const Color green600 = Color(0xFF008C3B);
   static const Color green700 = Color(0xFF007D33);
 
+
+  ///teal
+
+  static const Color teal50 = Color(0xFFE0F2F1);
+  static const Color teal100 = Color(0xFFB2DFDB);
+  static const Color teal200 = Color(0xFF80CBC4);
+  static const Color teal300 = Color(0xFF4DB6AC);
+  static const Color teal400 = Color(0xFF26A69A);
+  static const Color teal500 = Color(0xFF009688);
+  static const Color teal600 = Color(0xFF00897B);
+  static const Color teal700 = Color(0xFF00796B);
+  static const Color teal800 = Color(0xFF00695C);
+  static const Color teal900 = Color(0xFF004D40);
+
+
+
 }

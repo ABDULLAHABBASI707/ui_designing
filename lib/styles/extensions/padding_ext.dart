@@ -1,8 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import '../layouts/sizes.dart';
 
-
-
 extension PaddingExtension on Widget {
   Padding pad0() => Padding(
       padding: EdgeInsets.zero,
@@ -128,7 +126,7 @@ extension SizedBoxExtension on Widget{
   );
 
  Widget  sizedBoxwidth(double width)=>SizedBox(
-    height: width,
+    width: width,
     child: this,
   );
 }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:ui_designing/styles/colors/colors.dart';
 import 'package:ui_designing/styles/extensions/extensions.dart';
 import 'package:ui_designing/styles/layouts/fonts.dart';
+import 'package:ui_designing/widget/theme_dialog.dart';
 import '../styles/layouts/sizes.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -31,7 +32,9 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
               size: Sizes.s20,
             ),
           ).padAll(Sizes.s10),
+
           const Spacer(),
+
           Text(
             title,
             style: TextStyle(
@@ -39,19 +42,24 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
               fontWeight: FontWeight.w600,
             ),
           ),
+
           const Spacer(),
-          ElevatedButton(
-            onPressed: () {},
-            style: ElevatedButton.styleFrom(
-              backgroundColor: CustomColors.white,
-              elevation: 0,
-              shape: const CircleBorder(),
-            ),
-            child: const Icon(
-              Icons.notification_important,
-              color: CustomColors.black,
+
+          PopupMenuButton<String>(
+            icon:  Icon(
+              Icons.more_vert,
+              color:Theme.of(context).extension<AppColors>()?.popumenbtn,
               size: Sizes.s20,
             ),
+            onSelected: (value) {
+              if (value == 'theme') ThemeDialog.show(context);
+            },
+            itemBuilder: (context) => const [
+              PopupMenuItem(
+                value: 'theme',
+                child: Text('Change Theme'),
+              ),
+            ],
           ).padAll(Sizes.s10),
         ],
       ).padSymmetric(hor: Sizes.s5, ver: Sizes.s14),
